@@ -60,4 +60,10 @@ class CourseRepositoryApplicationTest {
         Course course1 = repository.findById(1L);
         assertEquals("5 basics commands to practice everyday - version 2.", course1.getName());
     }
+
+    @Test
+    @DirtiesContext
+    void testEntityManager() {
+        repository.exploreEntityManagerByPlayingAroundIt();
+    }
 }

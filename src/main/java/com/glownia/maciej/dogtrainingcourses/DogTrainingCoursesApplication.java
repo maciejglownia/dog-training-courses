@@ -22,10 +22,12 @@ public class DogTrainingCoursesApplication implements CommandLineRunner {
 
 	@Override
 	public void run(String... args) throws Exception {
-		Course course = repository.findById(1L);
+		// Course course = repository.findById(1L);
 
-		logger.info("Course 1 -> {}", course);
+		// logger.info("Course 1 -> {}", course);
 
-//		repository.deleteById(1L); // when delete 1 course testSave() will fail, so we need to comment this line
+		// repository.deleteById(1L); // when delete 1 course testSave() will fail, so we need to comment this line
+
+		repository.exploreEntityManagerByPlayingAroundIt();
 	}
 }
