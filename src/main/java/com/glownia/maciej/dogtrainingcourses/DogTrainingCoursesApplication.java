@@ -25,5 +25,7 @@ public class DogTrainingCoursesApplication implements CommandLineRunner {
 		Course course = repository.findById(1L);
 
 		logger.info("Course 1 -> {}", course);
+
+		repository.deleteById(1L);
 	}
 }
