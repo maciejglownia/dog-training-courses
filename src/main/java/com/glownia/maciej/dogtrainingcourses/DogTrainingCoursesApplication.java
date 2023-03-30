@@ -26,6 +26,6 @@ public class DogTrainingCoursesApplication implements CommandLineRunner {
 
 		logger.info("Course 1 -> {}", course);
 
-		repository.deleteById(1L);
+//		repository.deleteById(1L); // when delete 1 course testSave() will fail, so we need to comment this line
 	}
 }

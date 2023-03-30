@@ -40,4 +40,24 @@ class CourseRepositoryApplicationTest {
         assertNull(repository.findById(2L));
     }
 
+    /**
+     * Assumptions:
+     * 1. Get a course and check if the name is correct.
+     * 2. Set a new name for the course.
+     * 3. Check if value has been changed is correct.
+     * NOTE: Make sure in DogTrainingCoursesApplication you're not doing any manipulation of data in database
+     * which can causes an error
+     */
+    @Test
+    @DirtiesContext
+    void testSave() {
+        Course course = repository.findById(1L);
+        assertEquals("5 basics commands to practice everyday.", course.getName());
+
+        course.setName("5 basics commands to practice everyday - version 2.");
+        repository.save(course);
+
+        Course course1 = repository.findById(1L);
+        assertEquals("5 basics commands to practice everyday - version 2.", course1.getName());
+    }
 }
