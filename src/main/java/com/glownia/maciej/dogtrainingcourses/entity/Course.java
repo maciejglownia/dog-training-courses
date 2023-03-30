@@ -3,8 +3,10 @@ package com.glownia.maciej.dogtrainingcourses.entity;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
+import javax.persistence.NamedQuery;
 
 @Entity
+@NamedQuery(name="query_get_all-courses", query = "Select c From Course c") // check JPQLTest class to see how it has been used
 public class Course {
 
     @Id
